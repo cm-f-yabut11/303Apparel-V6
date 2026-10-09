@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | 303 Apparel</title>
+<meta name="description" content="Staff area">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="admin" data-bare="1">
+<header class="site-top"><div class="in">
+  <a class="logo" href="index.html" aria-label="303 Apparel home"><img src="assets/img/logo-mark-cream.png" alt="303 Apparel" width="149" height="160"></a>
+  <strong style="font-family:var(--display);font-size:1.3rem;font-weight:500">Admin</strong>
+  <span><a class="btn small ghost" style="color:#fff;border-color:rgba(255,255,255,.7)" href="index.html">View store</a>
+  <button class="btn small ghost" style="color:#fff;border-color:rgba(255,255,255,.7)" type="button" id="logout" hidden>Log out</button></span>
+</div></header>
+
+<main class="section"><div class="wrap">
+  <section id="loginBox" style="max-width:420px;margin:0 auto">
+    <h1 style="font-size:2rem;margin-bottom:.4rem">Staff login</h1>
+    <p class="lead">Enter the admin passcode.</p>
+    <form id="loginForm"><div class="field"><label for="key">Admin key</label><input id="key" type="password" autocomplete="current-password" required></div>
+    <p class="msg err" id="loginMsg" role="alert"></p><button class="btn" type="submit">Log in</button></form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="adm-tabs" role="tablist">
+      <button class="chip" role="tab" type="button" data-tab="products" aria-pressed="true">Products</button>
+      <button class="chip" role="tab" type="button" data-tab="customers" aria-pressed="false">Customers</button>
+      <button class="chip" role="tab" type="button" data-tab="messages" aria-pressed="false">Messages</button>
+    </div>
+
+    <div id="tab-products" class="adm-grid">
+      <div style="display:grid;gap:1.4rem">
+        <section class="panel"><h2 id="formTitle">Add product</h2>
+          <p class="hint">Add 1 to 8 photos. Tick “Featured” to show it in the Featured row on the home page.</p>
+          <form id="prodForm" novalidate>
+            <div class="field"><label for="aName">Product name</label><input id="aName" maxlength="80" required></div>
+            <div class="field"><label for="aPrice">Price (₱)</label><input id="aPrice" type="number" min="1" step="0.01" required></div>
+            <div class="field"><label for="aCat">Category</label><select id="aCat"><option value="tops">Tops</option><option value="outerwear">Outerwear</option><option value="sets">Sets</option><option value="kids">Kids</option></select></div>
+            <div class="field"><label for="aStock">Stock</label><input id="aStock" type="number" min="0" value="10"></div>
+            <div class="field"><label for="aDesc">Description</label><textarea id="aDesc" maxlength="400" style="min-height:80px"></textarea></div>
+            <div class="field"><label for="aPhotos">Photos (JPG, PNG or WebP — add one or more)</label><input id="aPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+              <div class="thumbs" id="thumbs"></div></div>
+            <label class="check"><input type="checkbox" id="aFeat"> Featured on the home page</label>
+            <p class="msg" id="formMsg" role="status"></p>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap"><button class="btn" type="submit" id="formSave">Add product</button><button class="btn ghost" type="button" id="formCancel" hidden>Cancel edit</button></div>
+          </form></section>
+        <section class="panel"><h2>Promo code</h2><p class="hint">Customers can use it until the last valid day.</p>
+          <form id="promoForm">
+            <div class="field"><label for="pCode">Code</label><input id="pCode" required maxlength="20"></div>
+            <div class="field"><label for="pPct">Discount (%)</label><input id="pPct" type="number" min="1" max="90" required></div>
+            <div class="field"><label for="pEnd">Last day valid</label><input id="pEnd" type="date" required></div>
+            <p class="msg" id="promoMsg" role="status"></p><button class="btn" type="submit">Save promo</button>
+          </form></section>
+      </div>
+      <section class="panel"><h2>Products</h2><p class="hint" id="featStat"></p><ul class="plist" id="plist"></ul>
+        <p style="margin:1.2rem 0 0"><button class="linkbtn" type="button" id="resetCat">Reset to the original catalog</button></p></section>
+    </div>
+
+    <div id="tab-customers" hidden>
+      <div class="tools"><form class="search" id="custSearch" role="search"><label class="sr" for="cq">Search customers</label><input id="cq" type="search" placeholder="Search name or email"></form><span class="msg" id="custCount"></span></div>
+      <div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Orders</th><th>Total spent</th><th>Joined</th></tr></thead><tbody id="custBody"></tbody></table></div>
+    </div>
+
+    <div id="tab-messages" hidden>
+      <p class="msg" id="msgCount"></p>
+      <div class="tablewrap"><table><thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Subject</th><th>Message</th></tr></thead><tbody id="msgBody"></tbody></table></div>
+    </div>
+  </section>
+</div></main>
+<div class="toast" id="toast" role="status"><span id="toastMsg"></span><button type="button" id="toastCart" hidden>View cart</button></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

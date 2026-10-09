@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products | 303 Apparel</title>
+<meta name="description" content="Shop 303 Apparel tops, outerwear, sets and kids pieces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="products">
+<header class="page-head"><div class="wrap"><h1 id="new-arrivals-top">Products</h1><p>Casual and formal pieces for every day. Use code 15FF for 15% off selected new arrivals.</p></div></header>
+<main class="section">
+  <div class="wrap">
+    <div class="tools">
+      <form class="search" role="search" id="searchForm">
+        <label class="sr" for="q">Search products</label>
+        <input id="q" type="search" placeholder="Search products" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      </form>
+      <label class="sr" for="sort">Sort</label>
+      <select class="sel" id="sort"><option value="">Sort: Recommended</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option></select>
+    </div>
+    <ul class="chips" id="chips" aria-label="Categories"></ul>
+    <p class="msg" id="count" aria-live="polite" style="margin-top:1rem"></p>
+    <ul class="grid" id="grid"></ul>
+    <div class="empty" id="empty" hidden></div>
+    <nav class="pager" id="pager" aria-label="Products pages"></nav>
+  </div>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>

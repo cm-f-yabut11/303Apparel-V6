@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>303 Apparel | Stay Ahead of the Trend</title>
+<meta name="description" content="Casual and formal pieces from 303 Apparel. Shop the latest drop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<main>
+  <!-- 1. HERO -->
+  <div class="hero-wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="hero-badge"><img src="assets/img/logo-badge-navy.png" alt="303 Apparel" width="92" height="92"></span>
+        <h1 id="hero-title">Stay Ahead of the Trend.</h1>
+        <p>Discover our latest collection of versatile pieces designed for every day confidence.</p>
+        <p class="offer"><strong>15% OFF</strong><span>Selected new arrivals</span></p>
+        <a class="btn" href="products.html">Cop the drop</a>
+      </div>
+      <div class="hero-img"><img src="assets/img/promo/promo-1.jpg" alt="Two models in casual-to-formal outfits posing by a striped wall" width="700" height="1000"></div>
+    </section>
+  </div>
+
+  <!-- 2. ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div>
+        <h2 class="title" id="about-title">About 303 Apparel</h2>
+        <p class="lead">A clothing brand for people who want to express their personal style through what they wear.</p>
+        <div class="facts">
+          <div><h3>Who we are</h3><p>303 Apparel is a clothing brand based at Holy Angel University in Angeles City, Pampanga, made for teenagers and young adults who care about fashion.</p></div>
+          <div><h3>What we offer</h3><p>Tops, outerwear, matched sets and even a kids' line, from everyday polos and tees to statement jackets.</p></div>
+          <div><h3>Our purpose</h3><p>To keep your wardrobe current without sacrificing your own style.</p></div>
+          <div><h3>Our mission</h3><p>Don’t follow the trend, set it. We make confident everyday style easy to reach for.</p></div>
+        </div>
+      </div>
+      <img src="assets/img/promo/promo-5.jpg" alt="Silhouette of a person in a white tank top on a beach at sunset" loading="lazy">
+    </div>
+  </section>
+
+  <!-- 3. FEATURED PRODUCTS -->
+  <section class="section alt" id="featured" aria-labelledby="feat-title">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="title" id="feat-title">Featured products</h2><a class="linkbtn" href="products.html">View all products</a></div>
+      <ul class="grid" id="featGrid"><li class="empty" style="grid-column:1/-1"><p>Loading featured products…</p></li></ul>
+    </div>
+  </section>
+
+  <!-- 4. PROMOTIONAL SECTION -->
+  <section class="section" id="promo" aria-labelledby="promo-title" hidden>
+    <div class="wrap">
+      <div class="promo-banner photo" style="background-image:linear-gradient(100deg,rgba(6,22,60,.9),rgba(6,22,60,.55) 60%,rgba(6,22,60,.25)),url('assets/img/promo/promo-7.jpg')">
+        <div>
+          <h2 id="promo-title"><span id="promoPct">15</span>% off selected new arrivals</h2>
+          <p id="promoUntil"></p>
+          <div class="promo-code"><span>Use code</span><b id="promoCode">15FF</b>
+            <button class="btn small" type="button" id="copyCode">Copy code</button>
+            <a class="btn small ghost" href="products.html">Cop the drop</a></div>
+        </div>
+        <div class="countdown" id="countdown" aria-label="Time left on the offer">
+          <div><b id="cdD">0</b><span>Days</span></div><div><b id="cdH">0</b><span>Hours</span></div><div><b id="cdM">0</b><span>Min</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. MULTIMEDIA: promotional video -->
+  <section class="section alt" id="video" aria-labelledby="video-title">
+    <div class="wrap">
+      <h2 class="title" id="video-title" style="text-align:center">See the drop</h2>
+      <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto">Watch our promotional video.</p>
+      <div class="video-resizer">
+        <div class="video" id="videoBox">
+          <div id="videoContent"></div>
+          <button type="button" class="video-handle" id="videoHandle" aria-label="Resize the video. Drag, or focus and use the arrow keys.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 5L5 19M19 13l-6 6M19 19h-3M19 19v-3"/></svg>
+          </button>
+        </div>
+        <p class="video-size" id="videoSize" aria-hidden="true"></p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
