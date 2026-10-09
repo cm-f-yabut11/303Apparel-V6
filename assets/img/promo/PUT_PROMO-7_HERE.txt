@@ -1,0 +1,12 @@
+Drop your photo here as "promo-7.jpg" and the 15% off countdown banner on the
+landing page (index.html) will pick it up automatically — it's referenced
+directly in that page's promo-banner background-image.
+
+A wide/landscape-leaning shot works best: the banner crops it to a short,
+wide strip (object-position centered, slightly toward the top) with a navy
+gradient over the left side for the text to sit on. If your file uses a
+different name or extension, either rename it to promo-7.jpg or update the
+url('assets/img/promo/promo-7.jpg') line in index.html to match.
+
+Until the file is added, the banner still looks fine — it just shows the
+plain navy gradient with no photo underneath.
